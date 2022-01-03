@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #Block433_512Container{
+            width: 250px;
+        }
+        #Block433_512Container img{
+            max-width: 100%;
+        }
+        .head > ul{
+            list-style: none;
+            display: flex;
+        }
+        .head > ul > li{
+            flex: 1;
+            background-color: white;
+            color: black;
+            font-size: 12px;
+            line-height: 20px;
+            border: 1px solid black;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+        .head > ul > li.active{
+            background-color: pink;
+        }
+        .head > ul > li > a{
+            color: black;
+        }
+        .head > ul > li.active > a{
+            color: white;
+        }
+        .unblock{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Cr4" id="Block433_512Container" _id="0_00_018">
+        <dl>
+            <dd class="head">
+                <ul class="clearfix">
+                    <li _class="Cr4" class="active"><a href="https://24h.pchome.app/pchome24h/recycle-656">紙想愛地球</a></li>
+                    <li _class="Cr4" class=""><a
+                            href="https://www.facebook.com/groups/498729124625585/posts/660434878455008/?s_c2_2">官方社團</a>
+                    </li>
+                    <li _class="Cr4" class=""><a href="https://www.pchomeec.tw/sites/pchomex?s_c2_3">家好選物</a></li>
+                    <li _class="Cr4" class=""><a href="https://bit.ly/3oMTeAg">混搭時尚</a></li>
+                </ul>
+            </dd>
+            <dd class="body clearfix"><a class="prod_img"
+                    href="https://24h.pchome.app/pchome24h/recycle-656"><img
+                        _src="//d.ecimg.tw/img/ecshop/v1/layout/index/1/20211227101811_b433-3-500x330.jpg" alt=""
+                        title="" src="//d.ecimg.tw/img/ecshop/v1/layout/index/1/20211227101811_b433-3-500x330.jpg">
+                    <ul class="prod_descrb"></ul>
+                </a><a class="prod_img unblock"
+                    href="https://www.facebook.com/groups/498729124625585/posts/660434878455008/?s_c2_2_0"><img
+                        _src="//d.ecimg.tw/img/ecshop/v1/layout/index/1/20211228103616_b454-3-500x330.jpg" alt=""
+                        title="" src="//d.ecimg.tw/img/ecshop/v1/layout/index/1/20211228103616_b454-3-500x330.jpg">
+                    <ul class="prod_descrb unblock"></ul>
+                </a><a class="prod_img unblock" href="https://www.pchomeec.tw/sites/pchomex?s_c2_3_0"><img
+                        _src="//c.ecimg.tw/img/ecshop/v1/layout/index/1/20211206115653_b474-3-500x330.jpg" alt=""
+                        title="" src="//c.ecimg.tw/img/ecshop/v1/layout/index/1/20211206115653_b474-3-500x330.jpg">
+                    <ul class="prod_descrb unblock"></ul>
+                </a><a class="prod_img unblock" href="https://bit.ly/3oMTeAg"><img
+                        _src="//b.ecimg.tw/img/ecshop/v1/layout/index/1/20211214102354_b493-3-500x330.jpg" alt=""
+                        title="" src="//b.ecimg.tw/img/ecshop/v1/layout/index/1/20211214102354_b493-3-500x330.jpg">
+                    <ul class="prod_descrb unblock"></ul>
+                </a></dd>
+        </dl>
+    </div>
+    <script>
+        let navs = Array.from(document.querySelectorAll(".head > ul > li"));
+        let bodys = Array.from(document.querySelectorAll(".body > a"));
+        
+        navs.forEach((nav) =>{
+            nav.addEventListener('mouseenter',function(){
+                document.querySelector(".head > ul > li.active").classList.remove("active");
+                this.classList.add("active");
+                document.querySelector(".body > a:not(.unblock)").classList.add("unblock");
+                let index = navs.indexOf(this);
+                bodys[index].classList.remove("unblock");
+            });
+        });
+    </script>
+</body>
+</html>
